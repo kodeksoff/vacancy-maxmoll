@@ -1,0 +1,42 @@
+body {
+    overflow-x: hidden;
+}
+
+a, button {
+    &:hover {
+        transition: all 0.3s;
+    }
+}
+
+.button {
+    background-color: #80aafc;
+    padding: 12px 22px;
+    font-weight: 500;
+    border: 2px solid #80AAFC;
+    border-radius: 25px 25px 5px 25px;
+    font-size: 18px;
+
+    &:hover {
+        background-color: #5980d5;
+        border: 2px solid #5980d5;
+    }
+}
+
+.button-with-arrow {
+    display: flex;
+    align-items: center;
+    &:after {
+        content: "";
+        width: 14px;
+        height: 14px;
+        margin-left: 15px;
+        background: url("../img/arrow.svg") no-repeat center;
+    }
+}
+
+.font-custom {
+    text-transform: uppercase;
+    font-family: 'Stampbor Grunge Russian';
+    font-weight: normal;
+    font-style: normal;
+}
