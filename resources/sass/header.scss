@@ -31,24 +31,32 @@ header {
         width: 875px;
         height: 902px;
         background: url("../img/header-figures.svg") no-repeat;
-        bottom: -150px;
+        bottom: -300px;
         left: 0;
     }
 
 
     .header-nav {
         padding-top: 28px;
-
         &__burger {
+            z-index: 10;
             .burger-button {
                 width: 87px;
                 height: 47px;
+                display: flex;
+                align-items: center;
+                img {
+                    width: 21px;
+                    height: 17px;
+                    display: block;
+                }
             }
         }
 
         &__logo {
             width: 166px;
             height: 40px;
+            z-index: 1;
             @media (max-width: 640px) {
                 width: 124px;
                 height: 30px;
@@ -63,12 +71,42 @@ header {
                 li {
                     margin-left: 25px;
                     margin-right: 25px;
+                    @media (max-width: 1024px) {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        font-size: 14px;
+                    }
+                    @media (max-width: 768px) {
+                        margin-bottom: 40px;
+                    }
+                }
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    margin-top: 100px;
+                    margin-left: 5px;
                 }
             }
+
             a {
+                text-decoration: none;
+
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+            @media (max-width: 768px) {
+                background: #1E1E1E;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: Max(220px, 20%);
+                bottom: 0;
+                z-index: 2;
+                display: none;
+                opacity: 0.99;
+            }
+            >.show {
+                display: block;
             }
         }
 
@@ -81,22 +119,23 @@ header {
     }
 
     .first-screen {
-        position: relative;
         z-index: 1;
+        position: relative;
 
         &:before {
             content: "";
             position: absolute;
             width: 875px;
             height: 902px;
+            margin-top: 100px;
             background: url("../img/first-wrapper.svg") no-repeat center;
             top: -75px;
             left: -25px;
-            z-index: -1;
+            z-index: 0;
         }
 
         &-left {
-            flex: 1 1 auto;
+            z-index: 1;
 
             &__content {
                 @media (max-width: 768px) {
@@ -105,12 +144,16 @@ header {
             }
 
             &__title {
-                font-size: 66px;
                 line-height: 0.7;
-                margin-top: 60px;
-                @media (min-width: 640px) {
-                    margin-top: 20px;
-                    font-size: 132px;
+                margin-top: 20px;
+                font-size: 132px;
+                @media (max-width: 640px) {
+                    font-size: 66px;
+                    margin-top: 60px;
+                }
+                @media (max-width: 1024px) {
+                    font-size: 80px;
+                    margin-top: 60px;
                 }
             }
 
@@ -123,12 +166,48 @@ header {
         }
 
         &-right {
-            flex: 1 1 auto;
+            position: relative;
+            margin-right: 150px;
+            @media (max-width: 1760px) {
+                margin-right: 0;
+            }
 
             img {
                 margin-top: 40px;
                 width: auto;
                 height: auto;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                background-image: url("../img/rectangle-blur.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                width: 52px;
+                height: 52px;
+                left: -90px;
+                bottom: 100px;
+                @media (max-width: 1480px) {
+                    left: -15px;
+                    top: 5px;
+                }
+            }
+        }
+
+        &__description {
+            display: flex;
+            align-items: center;
+            font-style: italic;
+            font-size: 15px;
+
+            &:before {
+                content: "";
+                background: url("../img/header-location.svg");
+                width: 18px;
+                height: 20px;
+                margin-right: 25px;
             }
         }
     }

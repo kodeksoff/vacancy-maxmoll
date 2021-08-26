@@ -1,9 +1,9 @@
 <header>
     <nav class="header-nav">
         <div class="container">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center" x-data="{ sideBarOpen: false }">
                 <div class="header-nav__burger sm:block md:hidden">
-                    <div class="burger-button">
+                    <div class="burger-button" @click="sideBarOpen = !sideBarOpen">
                         <img src="img/burger-button.svg" alt="Menu">
                     </div>
                 </div>
@@ -11,7 +11,7 @@
                     <div class="header-nav__logo">
                         <a href="/"><img src="img/logo.svg" alt="Maxmoll"></a>
                     </div>
-                    <div class="header-nav__navigation hidden md:block">
+                    <div class="header-nav__navigation" :class="{ 'show' : sideBarOpen }">
                         <ul class="flex">
                             <li><a href="/">Условия работы</a></li>
                             <li><a href="/">Обязанности и требования</a></li>
@@ -49,6 +49,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">поселок Коммунарка, улица <br /> Александры Монаховой, 57, вл2</div>
+        <div class="container">
+            <div class="first-screen__description">поселок Коммунарка, улица <br /> Александры Монаховой, 57, вл2</div>
+        </div>
     </div>
 </header>

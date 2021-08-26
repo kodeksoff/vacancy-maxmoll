@@ -786,9 +786,9 @@ select {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1480px) {
   .container {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 }
 
@@ -7119,7 +7119,7 @@ select {
 }
 
 .max-w-screen-xl {
-  max-width: 1280px;
+  max-width: 1480px;
 }
 
 .max-w-screen-2xl {
@@ -32095,9 +32095,9 @@ select {
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1480px) {
     .sm\:container {
-      max-width: 1280px;
+      max-width: 1480px;
     }
   }
 
@@ -38428,7 +38428,7 @@ select {
   }
 
   .sm\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 
   .sm\:max-w-screen-2xl {
@@ -63326,9 +63326,9 @@ select {
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1480px) {
     .md\:container {
-      max-width: 1280px;
+      max-width: 1480px;
     }
   }
 
@@ -69659,7 +69659,7 @@ select {
   }
 
   .md\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 
   .md\:max-w-screen-2xl {
@@ -94557,9 +94557,9 @@ select {
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1480px) {
     .lg\:container {
-      max-width: 1280px;
+      max-width: 1480px;
     }
   }
 
@@ -100890,7 +100890,7 @@ select {
   }
 
   .lg\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 
   .lg\:max-w-screen-2xl {
@@ -125761,7 +125761,7 @@ select {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1480px) {
   .xl\:container {
     width: 100%;
     margin-right: auto;
@@ -125788,9 +125788,9 @@ select {
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1480px) {
     .xl\:container {
-      max-width: 1280px;
+      max-width: 1480px;
     }
   }
 
@@ -132121,7 +132121,7 @@ select {
   }
 
   .xl\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 
   .xl\:max-w-screen-2xl {
@@ -157019,9 +157019,9 @@ select {
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1480px) {
     .\32xl\:container {
-      max-width: 1280px;
+      max-width: 1480px;
     }
   }
 
@@ -163352,7 +163352,7 @@ select {
   }
 
   .\32xl\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1480px;
   }
 
   .\32xl\:max-w-screen-2xl {
