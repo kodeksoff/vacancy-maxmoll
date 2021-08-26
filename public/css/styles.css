@@ -85,6 +85,10 @@ header:after {
 header .header-nav {
   padding-top: 28px;
 }
+header .header-nav__burger .burger-button {
+  width: 87px;
+  height: 47px;
+}
 header .header-nav__logo {
   width: 166px;
   height: 40px;

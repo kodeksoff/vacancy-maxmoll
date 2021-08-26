@@ -39,6 +39,13 @@ header {
     .header-nav {
         padding-top: 28px;
 
+        &__burger {
+            .burger-button {
+                width: 87px;
+                height: 47px;
+            }
+        }
+
         &__logo {
             width: 166px;
             height: 40px;
