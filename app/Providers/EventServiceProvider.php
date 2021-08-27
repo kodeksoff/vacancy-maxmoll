@@ -4,11 +4,12 @@ namespace App\Providers;
 
 use App\Events\StoredResume;
 use App\Listeners\StoredResumeListener;
+use App\Models\Block;
+use App\Models\Config;
+use App\Observers\CacheObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Config::observe(CacheObserver::class);
+        Block::observe(CacheObserver::class);
     }
 }
