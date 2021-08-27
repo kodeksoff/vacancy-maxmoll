@@ -12,7 +12,7 @@ class ResumeStored extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $respond;
+    public $respond;
 
     /**
      * Create a new message instance.
@@ -31,6 +31,7 @@ class ResumeStored extends Mailable
      */
     public function build()
     {
-        return $this->subject('Test')->markdown('vendor.mail.text.message', ['slot' => $this->respond]);
+
+        return $this->subject('Новое резюме')->markdown('vendor.mail.message');
     }
 }

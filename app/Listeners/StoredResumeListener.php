@@ -28,6 +28,6 @@ class StoredResumeListener
      */
     public function handle(StoredResume $event)
     {
-        Mail::to('kodeksoff@gmail.com')->send(new ResumeStored($event));
+        Mail::to('kodeksoff@gmail.com')->send(new ResumeStored($event->data));
     }
 }

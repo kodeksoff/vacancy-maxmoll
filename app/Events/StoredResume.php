@@ -22,7 +22,7 @@ class StoredResume extends \App\Models\Respond
      *
      * @return void
      */
-    public function __construct(Respond  $data)
+    public function __construct(Respond $data)
     {
         $this->data = $data;
     }
