@@ -19,13 +19,13 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 
 /**
- * Class Respond
+ * Class Config
  *
- * @property \App\Models\Respond $model
+ * @property \App\Models\Config $model
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Respond extends Section implements Initializable
+class Config extends Section implements Initializable
 {
     /**
      * @var bool
@@ -35,7 +35,7 @@ class Respond extends Section implements Initializable
     /**
      * @var string
      */
-    protected $title = 'Отклики';
+    protected $title = 'Настройки';
 
     /**
      * @var string
@@ -47,7 +47,7 @@ class Respond extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-info-circle');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o');
     }
 
     /**
@@ -58,29 +58,20 @@ class Respond extends Section implements Initializable
     public function onDisplay($payload = [])
     {
         $columns = [
-            AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::link('name', 'Имя', 'created_at')
+            AdminColumn::link('name', 'Название', 'created_at')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
                         ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%');
+                        ->orWhere('created_at', 'like', '%'.$search.'%')
+                    ;
                 })
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
                 }),
 
-            AdminColumn::text('phone', 'Телефон')->setHtmlAttribute('class', 'text-center'),
+            AdminColumnEditable::text('value', 'Значение')->setHtmlAttribute('class', 'text-center'),
 
-            AdminColumn::email('email', 'E-mail')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::text('bday', 'Дата рождения')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::text('experience', 'Опыт работы')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::url('link', 'Ссылка на резюме')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumnEditable::checkbox('status', 'Да', 'Нет')->setLabel('Обработано')->setHtmlAttribute('class', 'text-center'),
+            AdminColumn::text('key', 'Ключ')->setHtmlAttribute('class', 'text-center'),
 
             AdminColumn::text('created_at', 'Создано / Обновлено', 'updated_at')
                 ->setWidth('160px')
@@ -99,6 +90,18 @@ class Respond extends Section implements Initializable
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
 
+        $display->setColumnFilters([
+            AdminColumnFilter::select()
+                ->setModelForOptions(\App\Models\Config::class, 'name')
+                ->setLoadOptionsQueryPreparer(function($element, $query) {
+                    return $query;
+                })
+                ->setDisplay('name')
+                ->setColumnName('name')
+                ->setPlaceholder('All names')
+            ,
+        ]);
+        $display->getColumnFilters()->setPlacement('card.heading');
 
         return $display;
     }

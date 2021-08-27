@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\UtilService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/test', function () {
+    dd(\App\Models\Config::getValue('test'));
 });
 
 require __DIR__.'/auth.php';

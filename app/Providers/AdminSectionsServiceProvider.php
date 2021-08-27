@@ -12,6 +12,8 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     protected $sections = [
         \App\Models\Respond::class => 'App\Http\Sections\Respond',
+        \App\Models\Config::class => 'App\Http\Sections\Config',
+        \App\Models\Block::class => 'App\Http\Sections\Block',
     ];
 
     /**

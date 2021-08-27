@@ -7,7 +7,6 @@ use AdminColumnFilter;
 use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
-use AdminColumnEditable;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
@@ -19,13 +18,13 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 
 /**
- * Class Respond
+ * Class Block
  *
- * @property \App\Models\Respond $model
+ * @property \App\Models\Block $model
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Respond extends Section implements Initializable
+class Block extends Section implements Initializable
 {
     /**
      * @var bool
@@ -35,7 +34,7 @@ class Respond extends Section implements Initializable
     /**
      * @var string
      */
-    protected $title = 'Отклики';
+    protected $title;
 
     /**
      * @var string
@@ -47,7 +46,7 @@ class Respond extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-info-circle');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o');
     }
 
     /**
@@ -59,35 +58,25 @@ class Respond extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::link('name', 'Имя', 'created_at')
+            AdminColumn::link('name', 'Name', 'created_at')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
                         ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%');
+                        ->orWhere('created_at', 'like', '%'.$search.'%')
+                    ;
                 })
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
-                }),
-
-            AdminColumn::text('phone', 'Телефон')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::email('email', 'E-mail')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::text('bday', 'Дата рождения')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::text('experience', 'Опыт работы')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::url('link', 'Ссылка на резюме')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumnEditable::checkbox('status', 'Да', 'Нет')->setLabel('Обработано')->setHtmlAttribute('class', 'text-center'),
-
-            AdminColumn::text('created_at', 'Создано / Обновлено', 'updated_at')
+                })
+            ,
+            AdminColumn::boolean('name', 'On'),
+            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
                 ->setWidth('160px')
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('updated_at', $direction);
                 })
-                ->setSearchable(false),
+                ->setSearchable(false)
+            ,
         ];
 
         $display = AdminDisplay::datatables()
@@ -99,6 +88,18 @@ class Respond extends Section implements Initializable
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
 
+        $display->setColumnFilters([
+            AdminColumnFilter::select()
+                ->setModelForOptions(\App\Models\Block::class, 'name')
+                ->setLoadOptionsQueryPreparer(function($element, $query) {
+                    return $query;
+                })
+                ->setDisplay('name')
+                ->setColumnName('name')
+                ->setPlaceholder('All names')
+            ,
+        ]);
+        $display->getColumnFilters()->setPlacement('card.heading');
 
         return $display;
     }
@@ -114,13 +115,12 @@ class Respond extends Section implements Initializable
         $form = AdminForm::card()->addBody([
             AdminFormElement::columns()->addColumn([
                 AdminFormElement::text('name', 'Name')
-                    ->required()
-                ,
+                    ->required(),
+                AdminFormElement::image('test', 'Изображение'),
                 AdminFormElement::html('<hr>'),
                 AdminFormElement::datetime('created_at')
                     ->setVisible(true)
-                    ->setReadonly(false)
-                ,
+                    ->setReadonly(false),
                 AdminFormElement::html('last AdminFormElement without comma')
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
                 AdminFormElement::text('id', 'ID')->setReadonly(true),
