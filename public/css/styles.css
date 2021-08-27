@@ -7,6 +7,7 @@
 }
 html, body {
   overflow-x: hidden;
+  color: #1E1E1E;
 }
 
 a:hover, button:hover {
@@ -43,6 +44,71 @@ a:hover, button:hover {
   font-family: "Stampbor Grunge Russian";
   font-weight: normal;
   font-style: normal;
+}
+
+section {
+  padding: 80px 0 80px 0;
+}
+@media (max-width: 1024px) {
+  section {
+    padding: 40px 0 40px 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+}
+.section-header__title {
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 0.9;
+  margin-bottom: 5px;
+}
+@media (max-width: 1024px) {
+  .section-header__title {
+    font-size: 50px;
+  }
+}
+.section-header__subtitle {
+  font-size: 24px;
+}
+@media (max-width: 1024px) {
+  .section-header__subtitle {
+    font-size: 22px;
+  }
+}
+
+.section-content {
+  margin-top: 80px;
+}
+@media (max-width: 1024px) {
+  .section-content {
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+.section-content__left {
+  flex: 0 0 47%;
+}
+@media (max-width: 1024px) {
+  .section-content__left {
+    margin-bottom: 40px;
+  }
+}
+.section-content__right {
+  flex: 0 0 53%;
+}
+.section-content__title {
+  font-size: 38px;
+  font-weight: 500;
+  max-width: 450px;
+  line-height: 0.9;
+  margin-bottom: 15px;
+}
+.section-content__subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: #464646;
 }
 
 header {
@@ -259,4 +325,35 @@ header .first-screen__description:before {
   width: 18px;
   height: 20px;
   margin-right: 25px;
+}
+
+.conditions {
+  background-color: #f9f9f9;
+  position: relative;
+}
+.conditions-item {
+  max-width: 720px;
+  margin-bottom: 50px;
+}
+.conditions-item__icon {
+  margin-bottom: 25px;
+}
+.conditions-item__icon img {
+  display: block;
+  margin-left: -20px;
+}
+@media (max-width: 1024px) {
+  .conditions-item__icon img {
+    margin: 0 auto;
+  }
+}
+.conditions-item__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.conditions-item__description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #464646;
 }

@@ -1,3 +1,5 @@
 <x-layout>
- hfj
+    <x-header/>
+    <x-conditions/>
+    <x-responsibilities/>
 </x-layout>

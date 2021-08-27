@@ -1,5 +1,6 @@
 html, body {
     overflow-x: hidden;
+    color: #1E1E1E;
 }
 
 a, button {
@@ -39,4 +40,57 @@ a, button {
     font-family: 'Stampbor Grunge Russian';
     font-weight: normal;
     font-style: normal;
+}
+
+section {
+    padding: 80px 0 80px 0;
+    @media (max-width: 1024px) {
+        padding: 40px 0 40px 0;
+    }
+}
+.section-header {
+    text-align: center;
+    &__title {
+        font-size: 80px;
+        font-weight: 400;
+        line-height: 0.9;
+        margin-bottom: 5px;
+        @media (max-width: 1024px) {
+            font-size: 50px;
+        }
+    }
+    &__subtitle {
+        font-size: 24px;
+        @media (max-width: 1024px) {
+            font-size: 22px;
+        }
+    }
+}
+.section-content {
+    margin-top: 80px;
+    @media (max-width: 1024px) {
+        margin-top: 40px;
+        text-align: center;
+    }
+    &__left {
+        flex: 0 0 47%;
+        @media (max-width: 1024px) {
+            margin-bottom: 40px;
+        }
+    }
+    &__right {
+        flex: 0 0 53%;
+    }
+    &__title {
+        font-size: 38px;
+        font-weight: 500;
+        max-width: 450px;
+        line-height: 0.9;
+        margin-bottom: 15px;
+    }
+    &__subtitle {
+        font-size: 15px;
+        font-weight: 400;
+        color: #464646;
+    }
 }
