@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <div class="header-nav__right">
-                    <button class="button hidden xl:block">Заполнить анкету</button>
-                    <button class="button sm:block xl:hidden">Анкета</button>
+                    <button class="button hidden xl:block scrollToFeedback">Заполнить анкету</button>
+                    <button class="button sm:block xl:hidden scrollToFeedback">Анкета</button>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                             (п.Коммунарка)
                         </div>
                         <div class="first-screen-left__options flex flex-col-reverse md:flex-row items-center mt-0 md:mt-6 ">
-                            <button class="button button-with-arrow mx-auto md:mx-0 mt-3 md:mt-0 mb-9 md:mb-0">Анкета</button>
+                            <button class="button button-with-arrow mx-auto md:mx-0 mt-3 md:mt-0 mb-9 md:mb-0 scrollToFeedback">Анкета</button>
                             <div class="italic font-weight-bold md:ml-7 ml-0">Присоединяйтесь к нашей команде уже сейчас
                             </div>
                         </div>

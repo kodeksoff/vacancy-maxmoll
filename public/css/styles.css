@@ -1,4 +1,88 @@
 @font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-LightItalic.woff2") format("woff2"), url("/fonts/Roboto-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.woff2") format("woff2"), url("/fonts/Roboto-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Black.woff2") format("woff2"), url("/fonts/Roboto-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-BlackItalic.woff2") format("woff2"), url("/fonts/Roboto-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-BoldItalic.woff2") format("woff2"), url("/fonts/Roboto-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Light.woff2") format("woff2"), url("/fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-MediumItalic.woff2") format("woff2"), url("/fonts/Roboto-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.woff2") format("woff2"), url("/fonts/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Thin.woff2") format("woff2"), url("/fonts/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Italic.woff2") format("woff2"), url("/fonts/Roboto-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Medium.woff2") format("woff2"), url("/fonts/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-ThinItalic.woff2") format("woff2"), url("/fonts/Roboto-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: "Stampbor Grunge Russian";
   src: url("/fonts/StampborGrungeRussian.otf") format("opentype"), url("/fonts/StampborGrungeRussian.otf") format("opentype");
   font-weight: normal;
@@ -8,6 +92,7 @@
 html, body {
   overflow-x: hidden;
   color: #1E1E1E;
+  font-family: "Roboto", sans-serif;
 }
 
 a:hover, button:hover {
@@ -21,6 +106,7 @@ a:hover, button:hover {
   border: 2px solid #80AAFC;
   border-radius: 25px 25px 5px 25px;
   font-size: 18px;
+  color: #fff;
 }
 .button:hover {
   background-color: #5980d5;
@@ -62,7 +148,7 @@ section {
   font-size: 80px;
   font-weight: 400;
   line-height: 0.9;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 @media (max-width: 1024px) {
   .section-header__title {
@@ -356,4 +442,42 @@ header .first-screen__description:before {
   font-size: 18px;
   font-weight: 400;
   color: #464646;
+}
+
+.responsibilities-item {
+  margin-bottom: 35px;
+  align-items: baseline;
+}
+.responsibilities-item__integer {
+  font-size: 50px;
+  color: #80AAFC;
+  margin-right: 20px;
+}
+.responsibilities-item__description {
+  max-width: 720px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #464646;
+}
+.responsibilities .section-content__subtitle {
+  max-width: 480px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.feedback {
+  background-color: #f9f9f9;
+}
+.feedback form {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.feedback form .input-form {
+  width: 320px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 35px;
+}
+.feedback .section-header__subtitle {
+  font-size: 18px;
 }

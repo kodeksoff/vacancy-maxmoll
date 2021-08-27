@@ -18,13 +18,13 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 
 /**
- * Class Users
+ * Class Respond
  *
- * @property \App\Models\User $model
+ * @property \App\Models\Respond $model
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Users extends Section implements Initializable
+class Respond extends Section implements Initializable
 {
     /**
      * @var bool
@@ -34,7 +34,7 @@ class Users extends Section implements Initializable
     /**
      * @var string
      */
-    protected $title = 'Пользователи';
+    protected $title = 'Отклики';
 
     /**
      * @var string
@@ -46,7 +46,7 @@ class Users extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o');
+        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-info-circle');
     }
 
     /**
@@ -58,7 +58,8 @@ class Users extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name', 'created_at')
+
+            AdminColumn::link('name', 'Имя', 'created_at')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
                         ->orWhere('name', 'like', '%'.$search.'%')
@@ -67,10 +68,21 @@ class Users extends Section implements Initializable
                 })
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
+                }),
+
+            AdminColumn::text('phone', 'Телефон')->setHtmlAttribute('class', 'text-center'),
+
+            AdminColumn::email('email', 'E-mail')->setHtmlAttribute('class', 'text-center'),
+
+            AdminColumn::text('bday', 'Дата рождения')->setHtmlAttribute('class', 'text-center'),
+
+            AdminColumn::text('experience', 'Опыт работы')->setHtmlAttribute('class', 'text-center'),
+
+            AdminColumn::url('link', 'Ссылка на резюме')->setHtmlAttribute('class', 'text-center'),
+
+            \AdminColumnEditable::checkbox('status', 'Да', 'Нет')->setLabel('Обработано')->setHtmlAttribute('class', 'text-center'),
+
+            AdminColumn::text('created_at', 'Создано / Обновлено', 'updated_at')
                 ->setWidth('160px')
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('updated_at', $direction);
@@ -88,18 +100,6 @@ class Users extends Section implements Initializable
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
 
-        $display->setColumnFilters([
-            AdminColumnFilter::select()
-                ->setModelForOptions(\App\Models\User::class, 'name')
-                ->setLoadOptionsQueryPreparer(function($element, $query) {
-                    return $query;
-                })
-                ->setDisplay('name')
-                ->setColumnName('name')
-                ->setPlaceholder('All names')
-            ,
-        ]);
-        $display->getColumnFilters()->setPlacement('card.heading');
 
         return $display;
     }

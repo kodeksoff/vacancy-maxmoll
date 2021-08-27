@@ -24,5 +24,9 @@
         "sass": "^1.38.1",
         "sass-loader": "^12.1.0",
         "tailwindcss": "^2.0.2"
+    },
+    "dependencies": {
+        "form-data": "^4.0.0",
+        "imask": "^6.1.0"
     }
 }
