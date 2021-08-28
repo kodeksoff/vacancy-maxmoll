@@ -1,4 +1,4 @@
-<section class="about">
+<section class="about" id="about">
     <div class="about-header">
         <img src="img/rectangle_about_pink.png" class="about-header__rectangle-pink" alt="Maxmoll">
         <div class="container xl:max-w-7xl">

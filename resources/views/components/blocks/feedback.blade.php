@@ -55,7 +55,7 @@
                                placeholder="www.example.com"/>
                     </div>
                 </div>
-                <div class="italic mb-7 text-center">Нажимая на кнопку, вы даете <a href="#" class="text-indigo-500 underline">Согласие на обработку персональных данных.</a></div>
+                <div class="italic mb-7 text-center">Нажимая на кнопку, вы даете <span class="text-indigo-500 underline cursor-pointer" id="showPersonalData">Согласие на обработку персональных данных.</span></div>
                 <div class="text-center">
                     <button type="submit" class="button" id="submitButton">
                         Отправить

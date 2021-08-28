@@ -1,9 +1,9 @@
 <header>
     <nav class="header-nav">
         <div class="container">
-            <div class="flex justify-between items-center" x-data="{ sideBarOpen: false }">
+            <div class="flex justify-between items-center">
                 <div class="header-nav__burger sm:block md:hidden">
-                    <div class="burger-button" @click="sideBarOpen = !sideBarOpen">
+                    <div class="burger-button" id="sidebarButton">
                         <img src="img/burger-button.svg" alt="Menu">
                     </div>
                 </div>
@@ -11,11 +11,14 @@
                     <div class="header-nav__logo">
                         <a href="/"><img src="img/logo.svg" alt="Maxmoll"></a>
                     </div>
-                    <div class="header-nav__navigation" :class="{ 'show' : sideBarOpen }">
+                    <div class="header-nav__navigation sidebar">
+                        <div class="close-button md:hidden" id="sidebarButtonClose">
+                            <img src="img/close.svg" alt="Menu">
+                        </div>
                         <ul class="flex">
-                            <li><a href="/">Условия работы</a></li>
-                            <li><a href="/">Обязанности и требования</a></li>
-                            <li><a href="/">О «Maxmoll»</a></li>
+                            <li><a href="#conditions">Условия работы</a></li>
+                            <li><a href="#responsibilities">Обязанности и требования</a></li>
+                            <li><a href="#about">О «Maxmoll»</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container mt-10">
             <div class="first-screen__description">поселок Коммунарка, улица <br /> Александры Монаховой, 57, вл2</div>
         </div>
     </div>

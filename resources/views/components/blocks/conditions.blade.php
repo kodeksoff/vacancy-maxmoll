@@ -1,4 +1,4 @@
-<section class="conditions">
+<section class="conditions" id="conditions">
     <div class="container xl:max-w-7xl">
         <div class="section-header">
             <div class="section-header__title font-custom">Условия работы</div>

@@ -1,13 +1,33 @@
 require('./bootstrap');
 
-require('alpinejs');
-
 import IMask from 'imask';
 
 const scrollToFeedbackButton = document.querySelectorAll(".scrollToFeedback")
 const feedbackBlock = document.getElementById('feedback')
 const feedBackForm = document.getElementById('feedbackForm')
+const sidebar = document.querySelector('.sidebar')
 const submitButton = document.getElementById('submitButton')
+const sidebarButton = document.getElementById('sidebarButton')
+const sidebarButtonClose = document.getElementById('sidebarButtonClose')
+const showPersonalData = document.getElementById('showPersonalData')
+const personalDataModal = document.getElementById('personalDataModal')
+const acceptButton = document.getElementById('acceptButton')
+
+sidebarButton.addEventListener('click', () => {
+    sidebar.classList.add('show')
+})
+
+sidebarButtonClose.addEventListener('click', () => {
+    sidebar.classList.remove('show')
+})
+
+showPersonalData.addEventListener('click', () => {
+    personalDataModal.classList.toggle('modal-show')
+})
+
+acceptButton.addEventListener('click', () => {
+    personalDataModal.classList.remove('modal-show')
+})
 
 feedBackForm.addEventListener('submit', (event) => {
     event.preventDefault()

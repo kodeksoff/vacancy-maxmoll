@@ -1,4 +1,4 @@
-<section class="responsibilities">
+<section class="responsibilities" id="responsibilities">
     <div class="container xl:max-w-7xl">
         <div class="section-header">
             <div class="section-header__title font-custom">Обязанности и требования</div>

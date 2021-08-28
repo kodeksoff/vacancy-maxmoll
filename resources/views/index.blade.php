@@ -6,4 +6,5 @@
     <x-blocks.about />
     <x-blocks.projects />
     <x-blocks.footer />
+    <x-modals.modals />
 </x-layout>
