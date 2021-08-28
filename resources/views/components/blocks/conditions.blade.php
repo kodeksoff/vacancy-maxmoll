@@ -1,12 +1,12 @@
 <section class="conditions">
-    <div class="container">
+    <div class="container xl:max-w-7xl">
         <div class="section-header">
             <div class="section-header__title font-custom">Условия работы</div>
             <div class="section-header__subtitle">Кладовщика комплектовщика (п. Коммунарка)</div>
         </div>
         <div class="section-content">
             <div class="flex flex-col lg:flex-row">
-                <div class="section-content__left flex flex-col items-center lg:items-end pr-0 lg:pr-20">
+                <div class="section-content__left flex flex-col items-center lg:items-start">
                     <div class="mt-0 lg:mt-14">
                         <div class="section-content__title">Что мы готовы предложить</div>
                         <div class="section-content__subtitle italic">Наш склад: 1000 кв.м и около 6000 наименований

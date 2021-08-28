@@ -1,0 +1,25 @@
+footer {
+    background-color: #1E1E1E;
+    color: #8e8e8e;
+    font-size: 14px;
+    padding: 20px 0 20px 0;
+    ul {
+        justify-content: center;
+        align-items: center;
+        margin-left: -12px;
+        margin-right: -12px;
+        li {
+            padding: 0 12px 0 12px;
+            @media (max-width: 1024px) {
+                margin: 10px 0 10px 0;
+            }
+        }
+    }
+    a {
+        color: #fff;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,12 +1,12 @@
 <section class="responsibilities">
-    <div class="container">
+    <div class="container xl:max-w-7xl">
         <div class="section-header">
             <div class="section-header__title font-custom">Обязанности и требования</div>
         </div>
         <div class="section-content">
             <div class="flex flex-col lg:flex-row">
-                <div class="section-content__left flex flex-col items-center lg:items-end pr-0 lg:pr-20">
-                    <div class="pr-0 lg:pr-20">
+                <div class="section-content__left flex flex-col items-center lg:items-start">
+                    <div class="mt-7">
                         <div class="section-content__subtitle">Чем предстоит заниматься:</div>
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                 </div>
             </div>
             <div class="flex flex-col lg:flex-row mt-20">
-                <div class="section-content__left flex flex-col items-center lg:items-end pr-0 lg:pr-20">
-                    <div class="pr-0 lg:pr-20">
+                <div class="section-content__left flex flex-col items-center lg:items-start">
+                    <div class="mt-7">
                         <div class="section-content__subtitle">Мы не требуем опыт работы кладовщиком, но мы ждем, что ты будешь:</div>
                     </div>
                 </div>

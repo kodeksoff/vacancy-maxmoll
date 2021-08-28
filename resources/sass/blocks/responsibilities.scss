@@ -1,4 +1,16 @@
 .responsibilities {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 74px;
+        height: 74px;
+        background: url("../img/rectangle-blur-white.png") no-repeat;
+        background-size: cover;
+        margin-left: 50%;
+        left: -800px;
+        bottom: 600px;
+    }
     &-item {
         margin-bottom: 35px;
         align-items: baseline;
@@ -14,6 +26,7 @@
             font-size: 18px;
             font-weight: 400;
             color: #464646;
+            text-align: left;
         }
     }
 

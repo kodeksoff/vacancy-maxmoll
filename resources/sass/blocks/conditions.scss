@@ -1,9 +1,18 @@
 .conditions {
     background-color: #f9f9f9;
     position: relative;
-
+    &:after {
+        content: "";
+        position: absolute;
+        width: 84px;
+        height: 84px;
+        background: url("../img/rectangle-blur-white.png") no-repeat;
+        background-size: cover;
+        margin-right: 50%;
+        top: 450px;
+        right: -800px;
+    }
     &-item {
-        max-width: 720px;
         margin-bottom: 50px;
 
         &__icon {
@@ -28,6 +37,7 @@
             font-size: 18px;
             font-weight: 400;
             color: #464646;
+            text-align: left;
         }
     }
 }

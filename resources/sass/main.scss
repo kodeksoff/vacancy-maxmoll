@@ -74,13 +74,13 @@ section {
         text-align: center;
     }
     &__left {
-        flex: 0 0 47%;
+        flex: 0 0 50%;
         @media (max-width: 1024px) {
             margin-bottom: 40px;
         }
     }
     &__right {
-        flex: 0 0 53%;
+        flex: 0 0 50%;
     }
     &__title {
         font-size: 38px;
