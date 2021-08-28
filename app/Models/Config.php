@@ -9,10 +9,10 @@ class Config extends ModelCached
 {
     use HasFactory;
 
-    public static function getValue($key)
+    public static function getValue(string $key)
     {
         return Cache::tags('configs')->remember('config_' . $key, 360 * 60, function () use ($key) {
-            return Config::where('key', $key)->first();
+            return Config::where('key', $key)->firstOrFail()->value;
         });
     }
 }

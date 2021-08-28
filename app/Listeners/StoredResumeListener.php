@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\StoredResume;
 use App\Mail\ResumeStored;
+use App\Models\Config;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
@@ -28,6 +29,7 @@ class StoredResumeListener
      */
     public function handle(StoredResume $event)
     {
-        Mail::to('kodeksoff@gmail.com')->send(new ResumeStored($event->data));
+        $emails = explode(',', Config::getValue('emails'));
+        Mail::to($emails)->send(new ResumeStored($event->data));
     }
 }

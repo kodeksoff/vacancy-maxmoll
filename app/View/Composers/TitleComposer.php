@@ -24,6 +24,6 @@ class TitleComposer
      */
     public function compose(View $view)
     {
-        $view->with('title', $this->config::getValue('title')->value);
+        $view->with('title', $this->config::getValue('title'));
     }
 }
