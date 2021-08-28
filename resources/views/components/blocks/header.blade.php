@@ -34,10 +34,8 @@
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="first-screen-left">
                     <div class="first-screen-left__content">
-                        <div class="first-screen-left__title font-custom">Есть работа!</div>
-                        <div class="first-screen-left__subtitle font-custom">Кладовщика комплектовщик
-                            (п.Коммунарка)
-                        </div>
+                        <div class="first-screen-left__title font-custom">{!! $data['title'] !!}</div>
+                        <div class="first-screen-left__subtitle font-custom">{!! $data['subtitle'] !!}</div>
                         <div class="first-screen-left__options flex flex-col-reverse md:flex-row items-center mt-0 md:mt-6 ">
                             <button class="button button-with-arrow mx-auto md:mx-0 mt-3 md:mt-0 mb-9 md:mb-0 scrollToFeedback">Анкета</button>
                             <div class="italic font-weight-bold md:ml-7 ml-0">Присоединяйтесь к нашей команде уже сейчас
@@ -47,13 +45,13 @@
                 </div>
                 <div class="first-screen-right">
                     <div class="first-screen-right__content">
-                        <img src="img/first-screen-main.png" alt="main-image">
+                        <img src="{{ $data['image'] }}" alt="main-image">
                     </div>
                 </div>
             </div>
         </div>
         <div class="container mt-10">
-            <div class="first-screen__description">поселок Коммунарка, улица <br /> Александры Монаховой, 57, вл2</div>
+            <div class="first-screen__description">{!! $data['optional'] !!}</div>
         </div>
     </div>
 </header>

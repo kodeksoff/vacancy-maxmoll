@@ -193,8 +193,9 @@ header {
 
             img {
                 margin-top: 40px;
-                width: auto;
+                width: 707px;
                 height: auto;
+                object-fit: contain;
             }
 
             &:after {
@@ -220,10 +221,11 @@ header {
             align-items: center;
             font-style: italic;
             font-size: 15px;
-
             &:before {
+                flex: 0 0 auto;
                 content: "";
-                background: url("../img/header-location.svg");
+                background: url("../img/header-location.svg") no-repeat center;
+                background-size: cover;
                 width: 18px;
                 height: 20px;
                 margin-right: 25px;

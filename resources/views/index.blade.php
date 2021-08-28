@@ -1,5 +1,5 @@
 <x-layout>
-    <x-blocks.header />
+    <x-blocks.header :data="\App\Models\Block::getByKey('first_screen')" />
     <x-blocks.conditions />
     <x-blocks.responsibilities />
     <x-blocks.feedback />

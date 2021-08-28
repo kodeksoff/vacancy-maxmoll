@@ -1863,6 +1863,12 @@ sidebarButtonClose.addEventListener('click', function () {
   sidebar.classList.remove('show');
 });
 showPersonalData.addEventListener('click', function () {
+  axios.get('/api/getValue/personal_data').then(function (response) {
+    console.log(response);
+    document.querySelector('.js-personal-data').innerHTML = response.data;
+  })["catch"](function (error) {
+    console.log(error);
+  });
   personalDataModal.classList.toggle('modal-show');
 });
 acceptButton.addEventListener('click', function () {

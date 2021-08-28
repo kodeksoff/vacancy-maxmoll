@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/store', [\App\Http\Controllers\ResumeController::class, 'store'])->name('api.resume.store');
+Route::get('/getValue/{value}', [\App\Http\Controllers\PageController::class, 'config'])->name('api.config.value');

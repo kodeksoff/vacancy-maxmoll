@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    dd(\App\Models\Config::getValue('test'));
+    $d = \App\Models\Block::getByKey('first_screen');
+    dd($d['title']);
 });
 
 require __DIR__.'/auth.php';
